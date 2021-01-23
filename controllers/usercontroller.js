@@ -9,7 +9,11 @@ router.post('/register', (req, res) => {
   User.create({
     username: req.body.user.username,
     passwordhash: req.body.user.passwordhash,
-  }).then(res.send('This is our user/register endpoint'));
+  })
+    .then(function createSuccess(user) {
+      res.json({ user: user });
+    })
+    .catch((err) => res.status(500).json({ error: err }));
 });
 
 module.exports = router;
