@@ -9,3 +9,6 @@
 ![register token](https://user-images.githubusercontent.com/73569495/105577505-18cc4200-5d48-11eb-9cb1-9ffc581b6109.PNG)
 ![login token](https://user-images.githubusercontent.com/73569495/105577901-7a8dab80-5d4a-11eb-9204-48eb36214ca6.PNG)
 ![token test with env](https://user-images.githubusercontent.com/73569495/105578100-ddcc0d80-5d4b-11eb-9974-0d37c1c82e2d.PNG)
+![bcryptjs test with user register](https://user-images.githubusercontent.com/73569495/105578378-bb3af400-5d4d-11eb-964d-d7a196cafd78.PNG)
+![login test with bcrypt](https://user-images.githubusercontent.com/73569495/105578648-b5461280-5d4f-11eb-8b92-e865524e6b0c.PNG)
+![good login with bcrypt test](https://user-images.githubusercontent.com/73569495/105578761-75335f80-5d50-11eb-8fe0-4f379b66fe97.PNG)
