@@ -12,3 +12,6 @@
 ![bcryptjs test with user register](https://user-images.githubusercontent.com/73569495/105578378-bb3af400-5d4d-11eb-964d-d7a196cafd78.PNG)
 ![login test with bcrypt](https://user-images.githubusercontent.com/73569495/105578648-b5461280-5d4f-11eb-8b92-e865524e6b0c.PNG)
 ![good login with bcrypt test](https://user-images.githubusercontent.com/73569495/105578761-75335f80-5d50-11eb-8fe0-4f379b66fe97.PNG)
+![token undefined in  terminal](https://user-images.githubusercontent.com/73569495/105579144-9e54ef80-5d52-11eb-8a36-b6eefa62b664.PNG)
+![validate test](https://user-images.githubusercontent.com/73569495/105579298-b0835d80-5d53-11eb-9d58-f9964e31459e.PNG)
+![terminal console from validate session](https://user-images.githubusercontent.com/73569495/105579371-2be50f00-5d54-11eb-8eb1-42703979b565.PNG)
