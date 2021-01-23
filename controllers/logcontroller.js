@@ -29,4 +29,14 @@ router.get('/', (req, res) => {
     .catch((err) => res.status(500).json({ eror: err }));
 });
 
+/* ************************
+ *** LOG /:ID ***
+ ************************* */
+// /log/:id GET Gets individual logs by id for an individual user.
+router.get('/:id', (req, res) => {
+  Log.findOne({ where: { id: req.params.id } })
+    .then((logs) => res.status(200).json(logs))
+    .catch((err) => res.status(500).json({ error: err }));
+});
+
 module.exports = router;
