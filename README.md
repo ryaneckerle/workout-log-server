@@ -15,3 +15,4 @@
 ![token undefined in  terminal](https://user-images.githubusercontent.com/73569495/105579144-9e54ef80-5d52-11eb-8a36-b6eefa62b664.PNG)
 ![validate test](https://user-images.githubusercontent.com/73569495/105579298-b0835d80-5d53-11eb-9d58-f9964e31459e.PNG)
 ![terminal console from validate session](https://user-images.githubusercontent.com/73569495/105579371-2be50f00-5d54-11eb-8eb1-42703979b565.PNG)
+![log entry route test](https://user-images.githubusercontent.com/73569495/105580309-98aed800-5d59-11eb-8240-4460b0f86480.PNG)
