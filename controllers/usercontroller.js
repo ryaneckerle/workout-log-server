@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../db').import('../models/user.js');
+const jwt = require('jsonwebtoken');
 
 /* ************************
  *** USER REGISTER ***
@@ -11,7 +12,19 @@ router.post('/register', (req, res) => {
     passwordhash: req.body.user.passwordhash,
   })
     .then(function createSuccess(user) {
-      res.json({ user: user });
+      let token = jwt.sign(
+        { id: user.id, username: user.username },
+        process.env.JWT_SECRET,
+        {
+          expiresIn: 60 * 60 * 24,
+        }
+      );
+
+      res.json({
+        user: user,
+        message: 'User successfully created',
+        sessionToken: token,
+      });
     })
     .catch((err) => res.status(500).json({ error: err }));
 });
@@ -28,7 +41,14 @@ router.post('/login', (req, res) => {
   })
     .then(function loginSuccess(user) {
       if (user) {
-        res.status(200).json({ user: user });
+        let token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+          expiresIn: 60 * 60 * 24,
+        });
+        res.status(200).json({
+          user: user,
+          message: 'User successfully logged in',
+          sessionToken: token,
+        });
       } else {
         res.send('User does not exist.');
       }
