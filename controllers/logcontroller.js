@@ -57,4 +57,15 @@ router.put('/:id', (req, res) => {
     .catch((err) => res.status(500).json({ error: err }));
 });
 
+/* ************************
+ *** LOG /:ID ***
+ ************************* */
+// /log/:id DELETE Allows individual logs to be deleted by a user.
+router.delete('/:id', (req, res) => {
+  const query = { where: { id: req.params.id, owner_id: req.user.id } };
+
+  Log.destroy(query)
+    .then(() => res.status(200).json({ message: 'Log Entry Removed' }))
+    .catch((err) => status(500).json({ error: err }));
+});
 module.exports = router;
