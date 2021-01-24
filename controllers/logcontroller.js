@@ -39,4 +39,22 @@ router.get('/:id', (req, res) => {
     .catch((err) => res.status(500).json({ error: err }));
 });
 
+/* ************************
+ *** LOG /:ID ***
+ ************************* */
+// /log/:id PUT Allows individual logs to be updated by a user.
+router.put('/:id', (req, res) => {
+  const updateLog = {
+    description: req.body.log.description,
+    definition: req.body.log.definition,
+    result: req.body.log.result,
+  };
+
+  const query = { where: { id: req.params.id, owner_id: req.user.id } };
+
+  Log.update(updateLog, query)
+    .then((logs) => res.status(200).json(logs))
+    .catch((err) => res.status(500).json({ error: err }));
+});
+
 module.exports = router;

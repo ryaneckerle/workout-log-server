@@ -17,4 +17,6 @@
 ![terminal console from validate session](https://user-images.githubusercontent.com/73569495/105579371-2be50f00-5d54-11eb-8eb1-42703979b565.PNG)
 ![log entry route test](https://user-images.githubusercontent.com/73569495/105580309-98aed800-5d59-11eb-8240-4460b0f86480.PNG)
 ![log get logs test](https://user-images.githubusercontent.com/73569495/105580719-05c36d00-5d5c-11eb-99f2-a6146fdb3157.PNG)
+![GET all user's  log entries](https://user-images.githubusercontent.com/73569495/105622249-ecfb9b80-5ddd-11eb-9389-3166e59369b7.PNG)
 ![get user's log entry by id](https://user-images.githubusercontent.com/73569495/105586547-01e51a00-5d5f-11eb-9b54-b85bb747d0fd.PNG)
+![log controller PUT route](https://user-images.githubusercontent.com/73569495/105622244-d5bcae00-5ddd-11eb-8ffb-bb29ded84f85.PNG)
