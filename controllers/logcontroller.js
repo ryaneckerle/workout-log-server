@@ -68,4 +68,5 @@ router.delete('/:id', (req, res) => {
     .then(() => res.status(200).json({ message: 'Log Entry Removed' }))
     .catch((err) => status(500).json({ error: err }));
 });
+
 module.exports = router;
