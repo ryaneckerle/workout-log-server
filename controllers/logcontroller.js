@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const Log = require('../db').import('../models/log');
+const validateSession = require('../middleware/validate-session');
 
 /* ************************
  *** LOG / ***
  ************************* */
 // /log/ POST Allows users to create a workout log with descriptions, definitions, results, and owner properties.
-router.post('/', (req, res) => {
+router.post('/', validateSession, (req, res) => {
   const logEntry = {
     description: req.body.log.description,
     definition: req.body.log.definition,
@@ -21,7 +22,7 @@ router.post('/', (req, res) => {
  *** LOG / ***
  ************************* */
 // /log/ GET Gets all logs for an individual user.
-router.get('/', (req, res) => {
+router.get('/', validateSession, (req, res) => {
   let userid = req.user.id;
 
   Log.findAll({ where: { owner_id: userid } })
@@ -33,7 +34,7 @@ router.get('/', (req, res) => {
  *** LOG /:ID ***
  ************************* */
 // /log/:id GET Gets individual logs by id for an individual user.
-router.get('/:id', (req, res) => {
+router.get('/:id', validateSession, (req, res) => {
   Log.findOne({ where: { id: req.params.id } })
     .then((logs) => res.status(200).json(logs))
     .catch((err) => res.status(500).json({ error: err }));
@@ -43,7 +44,7 @@ router.get('/:id', (req, res) => {
  *** LOG /:ID ***
  ************************* */
 // /log/:id PUT Allows individual logs to be updated by a user.
-router.put('/:id', (req, res) => {
+router.put('/:id', validateSession, (req, res) => {
   const updateLog = {
     description: req.body.log.description,
     definition: req.body.log.definition,
@@ -61,7 +62,7 @@ router.put('/:id', (req, res) => {
  *** LOG /:ID ***
  ************************* */
 // /log/:id DELETE Allows individual logs to be deleted by a user.
-router.delete('/:id', (req, res) => {
+router.delete('/:id', validateSession, (req, res) => {
   const query = { where: { id: req.params.id, owner_id: req.user.id } };
 
   Log.destroy(query)
